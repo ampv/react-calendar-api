@@ -63,7 +63,7 @@ const loginUsuario = async (req, res = response) => {
         const usuario = await Usuario.findOne({ email })
 
         if (!usuario) {
-            return res.status(400).json({
+            res.status(400).json({
                 ok: false,
                 msg: 'No existe ningun usuario registrado con ese email.'
             })
@@ -73,7 +73,7 @@ const loginUsuario = async (req, res = response) => {
         const validPassword = bcrypt.compareSync(password, usuario.password)
 
         if (!validPassword) {
-            return res.status(400).json({
+            res.status(400).json({
                 ok: false,
                 msg: 'La contraseña ingresada no coincide.'
             })
