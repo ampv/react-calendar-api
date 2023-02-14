@@ -25,3 +25,8 @@
     | npm i bcryptjs
     | npm i jsonwebtoken
     | npm i cors
+
+## Notas
+    | Dentro del proyecto existe una carpeta llamada [postman]
+    | en ella se encuentra un archivo JSON que contiene los endPoints para realizar las peticiones
+    | este archivo se importa en el postman
