@@ -7,89 +7,223 @@
 	},
 	"item": [
 		{
-			"name": "auth - Crear usuario",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"angelica\",\r\n    \"email\": \"angelica@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "auth - Crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"angelica\",\r\n    \"email\": \"angelica@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth/new",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"new"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:4000/api/auth/new",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"auth",
-						"new"
-					]
+				{
+					"name": "auth - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"angelica@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth - Revalidar JWT",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2Y2NGE0NTAzYzM5N2IwYzkyMDg1ZTEiLCJuYW1lIjoiYW5nZWxpY2EiLCJpYXQiOjE2NzcwODUzMTcsImV4cCI6MTY3NzA5MjUxN30.1nboUeLXEtcZDMtsNw5aGNIo9E4mbfJHVjfRW4OXEpM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"angelica@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth/renew",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"renew"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "auth - Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"angelica@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "app",
+			"item": [
+				{
+					"name": "Event - getEvento",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2Y2NGE0NTAzYzM5N2IwYzkyMDg1ZTEiLCJuYW1lIjoiYW5nZWxpY2EiLCJpYXQiOjE2NzcwOTQwNDIsImV4cCI6MTY3NzEwMTI0Mn0.WApG4QEf2XzZjMHMIyyzMyQFO49khYtAVqZC_SVDArw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/api/events",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"events"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:4000/api/auth",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"auth"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "auth - Revalidar JWT",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"angelica@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Event - CrearEvento",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2Y2NGE0NTAzYzM5N2IwYzkyMDg1ZTEiLCJuYW1lIjoiYW5nZWxpY2EiLCJpYXQiOjE2NzcwOTQwNDIsImV4cCI6MTY3NzEwMTI0Mn0.WApG4QEf2XzZjMHMIyyzMyQFO49khYtAVqZC_SVDArw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Evento de angelica\",\r\n    \"notes\": \"Esta es la nota del evento de angelica\",\r\n    \"start\": 1,\r\n    \"end\": 1,\r\n    \"user\": \"angelica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/events",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"events"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:4000/api/auth",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"auth"
-					]
+				{
+					"name": "Event - ActualizarEvento",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2ViYWI3M2RhNmU2YzQ3NWI3NjRjZGQiLCJuYW1lIjoiYW5nZWxpY2EiLCJpYXQiOjE2NzY0MDQxMDEsImV4cCI6MTY3NjQxMTMwMX0.kpNuRztyxkkvjf3qwouVffUebWbEcNMQEnICa58Tncg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/api/events",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Event - EliminarEvento",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2Y2NGE0NTAzYzM5N2IwYzkyMDg1ZTEiLCJuYW1lIjoiYW5nZWxpY2EiLCJpYXQiOjE2NzcwOTQwNDIsImV4cCI6MTY3NzEwMTI0Mn0.WApG4QEf2XzZjMHMIyyzMyQFO49khYtAVqZC_SVDArw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/api/events/63f66d4dd8167ba08dd4d17f",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"events",
+								"63f66d4dd8167ba08dd4d17f"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

@@ -52,7 +52,7 @@ const actualizarEvento = async (req, res = response) => {
         const evento = await Evento.findById(eventoId)
 
         if (!evento) {
-            res.status(404).json({
+            return res.status(404).json({
                 ok: false,
                 msg: 'No existe ningun evento asociado con el id'
             })
@@ -130,14 +130,7 @@ const eliminarEvento = async (req, res = response) => {
             ok: false,
             msg: 'Ocurrio un error mientras se intentaba eliminar el evento.'
         })
-
     }
-
-    res.json({
-        ok: true,
-        msg: eventoId
-    })
-
 }
 
 module.exports = {
